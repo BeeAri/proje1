@@ -13,16 +13,28 @@
         }
         function clickMe()
         {
-            // var ve let değişken tanımlamaya yarayan JavaScript komutlarıdır.
+            // var ve let değişken tanımlamaya yarayan JavaScript komutlarıdır.    
             var myName = document.form1.txtName.value;
             window.alert("Hoşgeldiniz "+myName);
-            //string birleştirme buna merge veya concatenate işlemi denilir.
+            //string birleştirme buna merge veya concatenate işlemi denilir.   
         }
+
         function changeCity()
         {
             var cityID = document.form1.cmbCity.value;
+            window.location.href = "3.html?ID" + cityID;
+            //QueryString; ?ID=5&
+        }
+
+        function toplamHesapla()
+        {
+            myFiyat = document.form1.dblFiyat.value;
+            myKDV = document.form1.dblKDV.value;  
+            //document.form1.dblToplam.value = (myFiyat) + (myFiyat*myKDV/100);
+            document.form1.dblToplam.value = parseInt(myFiyat)*(parseInt(myKDV)+100)/100;
 
         }
+
     </script>
 
 </head>
@@ -36,24 +48,36 @@
 </tr>
 <tr>
     <td>T.C. No:</td> 
-    <td><input type="text" name="txtTC" size="20" maxlength="11"></td>
-</tr>
-<tr>
-    <td><input type="button" name="btnSubmit" value="Gönder" onclick="javascript:clickMe();"></td>
+    <td><input autocomplete="off" type="text" name="txtTC" size="20" maxlength="11"></td>
 </tr>
 <tr>
     <td>Şehir:</td>
-    <td><select name="cmbCity" style="width: 200px;" onchange="javascript:changeCity();">
+    <td><select autocomplete="off" name="cmbCity" style="width: 200px;" onchange="javascript:changeCity();">
                 <option value="0">Seçiniz</option>
                 <option value="1">Ankara</option>
                 <option value="2">İstanbul</option>
                 <option value="3">İzmir</option>
                 <option value="4">Bursa</option>
         </select>
-    
     </td>
-
 </tr>
+<tr>
+    <td>Fiyat:</td>
+    <td><input type="text" name="dblFiyat" size="20" maxlength="5"></td>
+</tr>
+<tr>
+    <td>KDV Oranı:</td>
+    <td><input type="text" name="dblKDV" size="20" maxlength="2" onblur="javascript:toplamHesapla();"</td>
+</tr>
+<tr>
+    <td>Toplam:</td>
+    <td><input type="text" name="dblToplam" size="20" maxlength="10"</td>
+</tr>
+
+<tr>
+    <td><input type="button" name="btnSubmit" value="Gönder" onclick="javascript:clickMe();"></td>
+</tr>
+
 </form>
 
 </table>
