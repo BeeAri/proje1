@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yıldız Ağacı</title>
+    <script language="JavaScript">
+        function loadMe()
+        {
+            window.alert("Merhaba!");
+        }
+
+        function clickMe()
+        {
+            var myBoyut = document.tboyut.value;
+            var mySimge = document.tSimge.value;
+            bosluk = "";
+            for (let index = 0; index < myBoyut; index++) 
+            {
+            bosluk = bosluk + mySimge;
+            document.writeln(mySimge+"<br/>");
+            }
+            
+        }
+        
+
+    </script>
+</head>
+<body onload="javascript:loadMe();">
+<table>
+    <tr>
+        <td>Tekrar ederek agaca dönüşecek simgeyi yazınız:</td>
+        <td><input autocomplete="off" type="text" name="tSimge" size="20" </td>
+    </tr>
+    <tr>
+        <td>Ağacın boyutunu yazınız:</td>
+        <td><input autocomplete="off" type="text" name="tboyut" size="20"</td>
+    </tr>
+    <tr>
+        <td><input type="button" name="btnSubmit" value="Gönder" onclick="javascript:clickMe();"></td>
+    </tr>
+</table>
+</body>
+</html>
