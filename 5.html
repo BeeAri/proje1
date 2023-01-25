@@ -13,7 +13,9 @@
         }
         function clickMe()
         {
-            window.alert("Hoşgeldiniz "+document.form1.txtName.value);
+            // var ve let değişken tanımlamaya yarayan JavaScript komutlarıdır.
+            var myName = document.form1.txtName.value;
+            window.alert("Hoşgeldiniz "+myName);
         }
     </script>
 
@@ -31,7 +33,7 @@
     <td><input type="text" name="txtTC" size="20" maxlength="11"></td>
 </tr>
 <tr>
-    <td><input type="button" name="btnSubmit" value="Gönder" onclick="clickMe();"></td>
+    <td><input type="button" name="btnSubmit" value="Gönder" onclick="javascript:clickMe();"></td>
 </tr>
 </form>
 
