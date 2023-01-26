@@ -8,11 +8,18 @@
     <script>
         function CloseMe()
         {
+            //window.opener.location.href="13pencere.html";
+            window.opener.document.getElementById("txtName").value = "b";
             window.close();
+            
         }
     </script>
 </head>
 <body>
-    <input type="button" name="btnW1" value="Kapat" onclick="javascript:CloseMe();"
+    <tr>
+        <td><input type="button" name="btnW1" value="Kapat" onclick="javascript:CloseMe();"></td>
+        
+    </tr>
+    
 </body>
 </html>

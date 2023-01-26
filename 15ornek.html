@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="JavaScript">
+
+        function SelectValue()
+        {
+            if (document.form1.rdCinsiyet.value="E") 
+            {
+                document.write("E")
+            }
+
+        }
+    </script>
+</head>
+<body>
+<form name="form1">
+    <table>
+    <tr>
+        <td>Cinsiyetiniz:</td>
+        <td>
+            <input type="radio" name="rdCinsiyet" value="E">Erkek
+            <input type="radio" name="rdCinsiyet" value="K">Kadın
+        </td>
+        <td><script language="JavaScript">
+
+            function SelectValue()
+            {
+                if (document.form1.rdCinsiyet.value="E") 
+                {
+                    document.getElementById("Cinsiyet").innerHTML = "Erkek";    
+                }
+                else
+                {
+                    document.getElementById("Cinsiyet").innerHTML = "Erkek";
+                }
+    
+            }
+            </script>
+        </td>
+        <td id="Cinsiyet"></td>
+    </tr>
+    <tr>
+        <td>Daire Tipi:</td>
+        <td>
+        <input id="DaireID" type="checkbox" name="chkDaireTuru" value="1">1+1
+        <input id="DaireID" type="checkbox" name="chkDaireTuru" value="2">2+1
+        <input id="DaireID" type="checkbox" name="chkDaireTuru" value="3">3+1
+        <input id="DaireID" type="checkbox" name="chkDaireTuru" value="4">4+1
+        </td>
+        <td><script language="JavaScript">
+
+            function SelectValue1()
+            {
+                var DaireID =document.querySelector("#DaireID");
+		
+		DaireID.onchange=function(event)
+		{
+			//select içindeki tüm elemanları seçiyoruz.
+			var liste= this && this.options;
+			
+			//tüm liste elemanları üzerinde dönüyor.
+			for(var i=0;i<liste.length;i++)
+			{
+				if(liste[i].selected) //seçili olanı listeleyecek
+				{
+					document.getElementById("Cinsiyet").innerHTML = liste[i].value;	
+				}
+			}
+		}
+            }
+            
+            </script>
+        </td>
+        <td id="Daire"></td>
+    </tr>
+    <tr>
+        <td>Meslağiniz:</td>
+        <td>
+        <select name="drpMeslek">
+            <option value="1">Seçiniz</option>
+            <option value="2">Doktor</option>
+            <option value="3">Mühendis</option>
+            <option value="4">Polis</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="button" name="btnW1" value="Gönder" onclick="javascript:SelectValue();SelectValue1();"></td>     
+    </tr>
+    </table>
+</form>
+</body>
+</html>
