@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const cars = ["Saab", "Volvo", "BMW"];
+        document.write(cars[1]+"<br/>");
+        document.writeln(cars.length+"<br/>");
+        document.writeln(cars[cars.length-1]+"<br/>");
+        
+        const bikes = new Array("Salcano", "Bianchi", "Btwin");
+        document.write(bikes[0]+"<br/>");
+        document.write("---Bikes Sıralaması---<br/>");
+        bikes.push("BMX"); //arraye yeni bir member ekler
+        bikes.sort(); //arrayi sort eden yeni sıralayan methodu
+        
+        for (let i = 0; i < bikes.length; i++) 
+        {
+            document.write(bikes[i]+"<br/>");
+        }
+
+    </script>
+</body>
+</html>

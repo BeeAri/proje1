@@ -6,40 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yıldız Ağacı</title>
     <script language="JavaScript">
-        function loadMe()
-        {
-            window.alert("Merhaba!");
-        }
+        
 
-        function clickMe()
+        function Ucgen()
         {
-            var myBoyut = document.tboyut.value;
-            var mySimge = document.tSimge.value;
+            var myBoyut = document.form1.tboyut.value;
+            var mySimge = document.form1.tSimge.value;
             bosluk = "";
-            for (let index = 0; index < myBoyut; index++) 
+            for ( i = 0; i< myBoyut; i++) 
             {
-            bosluk = bosluk + mySimge;
-            document.writeln(mySimge+"<br/>");
+                    bosluk = bosluk + mySimge;             
+                    document.writeln(bosluk + "<br/>");                         
             }
-            
         }
         
 
     </script>
 </head>
-<body onload="javascript:loadMe();">
+<body>
+    <form name="form1">
 <table>
     <tr>
         <td>Tekrar ederek agaca dönüşecek simgeyi yazınız:</td>
-        <td><input autocomplete="off" type="text" name="tSimge" size="20" </td>
+        <td><input autocomplete="off" type="text" name="tSimge" size="20"></td>
+        <!-- <td><select type="text" name="sekil" style="width: 40px;" ">
+        <option value="1">*</option>
+        <option value="2">+</option>
+        <option value="3">%</option>
+        <option value="4">#</option>
+        <option value="5">!</option>
+    </select></td> -->
+
     </tr>
     <tr>
         <td>Ağacın boyutunu yazınız:</td>
-        <td><input autocomplete="off" type="text" name="tboyut" size="20"</td>
+        <td><input autocomplete="off" type="text" name="tboyut" size="20"></td>
     </tr>
     <tr>
-        <td><input type="button" name="btnSubmit" value="Gönder" onclick="javascript:clickMe();"></td>
+        <td><input type="button" name="btnSubmit" value="Gönder" onclick="javascript:Ucgen();"></td>
     </tr>
 </table>
+</form>
 </body>
 </html>

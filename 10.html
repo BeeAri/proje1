@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="JavaScript">
+    function Ucgen()
+    {
+    var myBoyut = document.form1.txtSayi.value;
+    mySimge = "*";
+    bosluk = "";
+            for ( i = 0; i< myBoyut; i++) 
+            {
+                    bosluk = bosluk + mySimge;             
+                    document.writeln(bosluk + "<br/>");                         
+            }   
+    }
+
+    </script>
+</head>
+<body>
+    <form name="form1">
+        Üçgen Yükseliği İçin Sayı Giriniz:<input type="text" name="txtSayi" size="20">
+        <input type="button" name="btnSubmit" value="Gönder" onclick="Ucgen();"
+    </form>
+</body>
+</html>
