@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Window</title>
+    <script language:"JavaScript">
+        function openNew()
+        {
+            //window.alert("burda");
+            //return false;
+            //window.open("11.html",)
+            window.open("11.html","Yeni Pencere","height=500, width=400, top=300, left=200,right=200");
+
+        }
+
+    </script>
 </head>
 <body>
+<form name="form1">
+    <tr>
+        <td><input type="text" name="txtName" size="20"></td>
+        <td><input type="button" name="=btn1" value="Pencere Aç" onclick="javascript:openNew();"></td>
+    </tr>
     
+</form>
 </body>
 </html>
