@@ -11,15 +11,15 @@
             myC = document.form1.rdCinsiyet.value;
             if(myC == "E")
             {
-                document.getElementById("sCinsiyet").innerHTML = "Erkek";
+                document.getElementById("sCinsiyet").innerHTML = "=> "+ "Erkek";
             }
             else if(myC == "K")
             {
-                document.getElementById("sCinsiyet").innerHTML = "Kadın";
+                document.getElementById("sCinsiyet").innerHTML = "=> "+ "Kadın";
             }
             else
             {
-                document.getElementById("sCinsiyet").innerHTML = "Seçilmedi";
+                document.getElementById("sCinsiyet").innerHTML = "=> "+ "Seçilmedi";
             }
         }
 
@@ -33,6 +33,7 @@
             var grupD = [];
             var grupE = [];
             var myD = document.getElementsByName("chkDaireTuru");
+            var myE = document.getElementsByTagName("label");
             //document.querySelector
             /*
             //---örnek---//
@@ -45,7 +46,9 @@
             {
                 if(myD[i].checked)
                 {
-                    grupD.push(myD[i].value,myD[i].id);
+                    //grupD.push(myD[i].value,myD[i].id);
+                    grupD.push(myD[i].id);
+                    //grupE.push(myE[i].innerHTML);
                     //alert(myD[1]);
                     //grupE.push(myD[i].id);
                     //alert(grupE[1]);
@@ -53,34 +56,36 @@
                 }
                 
             }
-            if(grupD.length>0){
+            if(grupD.length>0)
+            {
+                //document.getElementById("sDaire").innerHTML = "=> "+ grupE.join(", ");
                 document.getElementById("sDaire").innerHTML = "=> "+ grupD.join(", ");
-               }
-               else{
+            }
+            else
+            {
                document.getElementById("sDaire").innerHTML = "You have not selected anything";
-               }
-
+            }
         }
+
 
         function Values3()
         {
             var grupD = [];
-            var grupE = [];
             var myD = document.getElementsByTagName("option");
             
-            for(var i=0;i<liste.length;i++)
+            for(var i=0;i<myD.length;i++)
 			{
-				if(liste[i].selected) //seçili olanı listeleyecek
+				if(myD[i].selected) //seçili olanı listeleyecek
 				{
-					alert(liste[i].value);	
+					document.getElementById("sMeslek").innerHTML = "=> "+ myD[i].value + "/ " + myD[i].innerHTML;	
 				}
 			}
         }
-        
-        function FarklıSecim(i) 
-        {
-            document.getElementById("sMeslek").value = i;
-        }
+
+        // function FarklıSecim(i) 
+        // {
+        //     document.getElementById("sMeslek").value = i;
+        // }
 
 
         function HepsiniSeç() 
