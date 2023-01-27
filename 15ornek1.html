@@ -39,28 +39,47 @@
             const collection = document.getElementsByTagName("li");
             document.getElementById("demo").innerHTML = collection[1].innerHTML;
             */
-            const myE = document.form1.getElementsByName("label");
-            document.getElementById("sDaire").innerHTML = myE[1].innerHTML;
+            
             //var myD = document.form1.chkDaireTuru;
             for (let i = 0; i < myD.length; i++) 
             {
                 if(myD[i].checked)
                 {
-                    grupD.push(myD[i].value);
+                    grupD.push(myD[i].value,myD[i].id);
                     //alert(myD[1]);
-                    //grupE.push(myE[i].innerHTML)
+                    //grupE.push(myD[i].id);
                     //alert(grupE[1]);
 
                 }
                 
             }
             if(grupD.length>0){
-                document.getElementById("sDaire").innerHTML = "=> "+grupD.join(", ");
+                document.getElementById("sDaire").innerHTML = "=> "+ grupD.join(", ");
                }
                else{
                document.getElementById("sDaire").innerHTML = "You have not selected anything";
                }
 
+        }
+
+        function Values3()
+        {
+            var grupD = [];
+            var grupE = [];
+            var myD = document.getElementsByTagName("option");
+            
+            for(var i=0;i<liste.length;i++)
+			{
+				if(liste[i].selected) //seçili olanı listeleyecek
+				{
+					alert(liste[i].value);	
+				}
+			}
+        }
+        
+        function FarklıSecim(i) 
+        {
+            document.getElementById("sMeslek").value = i;
         }
 
 
@@ -110,13 +129,13 @@
            <tr>
             <td>Daire Türü Tercihiniz:</td>                    
             <td>
-                <input type="checkbox" name="chkDaireTuru" value="1">
+                <input type="checkbox" name="chkDaireTuru" value="1" id="1+1">
                 <label>1+1</label>   
-                <input type="checkbox" name="chkDaireTuru" value="2">
+                <input type="checkbox" name="chkDaireTuru" value="2" id="2+1">
                 <label>2+1</label>
-                <input type="checkbox" name="chkDaireTuru" value="3">
+                <input type="checkbox" name="chkDaireTuru" value="3" id="3+1">
                 <label>3+1</label>
-                <input type="checkbox" name="chkDaireTuru" value="4">
+                <input type="checkbox" name="chkDaireTuru" value="4" id="4+1">
                 <label>4+1</label>
                 <input type="checkbox" name="chkHepsi" id="chkHepsi" onclick="HepsiniSeç()">Hepsini Seç
                 <td id="sDaire"></td>             
@@ -128,7 +147,7 @@
         </tr>
         <tr>
             <td>Mesleğiniz:</td>       
-            <td><select id="myM" name="drpMeslek" style="width:100%">
+            <td><select id="myM" name="drpMeslek" style="width:100%" onchange="FarklıSecim(this.value);">
                         <option value="0">Seçiniz</option>
                         <option value="1">Avukat</option>
                         <option value="2">Doktor</option>
