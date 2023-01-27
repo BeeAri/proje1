@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script language="JavaScript">
+        function Values1()
+        {
+            myC = document.form1.rdCinsiyet.value;
+            if(myC == "E")
+            {
+                document.getElementById("sCinsiyet").innerHTML = "=> "+ "Erkek";
+            }
+            else if(myC == "K")
+            {
+                document.getElementById("sCinsiyet").innerHTML = "=> "+ "Kadın";
+            }
+            else
+            {
+                document.getElementById("sCinsiyet").innerHTML = "=> "+ "Seçilmedi";
+            }
+        }
+
+        function Values2()
+        {
+            var grupD = [];
+            var myD = document.getElementsByName("chkDaireTuru");
+
+            for (let i = 0; i < myD.length; i++) 
+            {
+                if(myD[i].checked)
+                {
+                    grupD.push(myD[i].id);
+                }  
+            }
+            if(grupD.length>0)
+            {
+                document.getElementById("sDaire").innerHTML = "=> "+ grupD.join(", ");
+            }
+            else
+            {
+               document.getElementById("sDaire").innerHTML = "You have not selected anything";
+            }
+        }
+
+
+        function Values3()
+        {
+            var grupD = [];
+            var myD = document.getElementsByTagName("option");
+            
+            for(var i=0;i<myD.length;i++)
+			{
+				if(myD[i].selected)
+				{
+					document.getElementById("sMeslek").innerHTML = "=> "+ myD[i].value + "/ " + myD[i].innerHTML;	
+				}
+			}
+        }
+
+    </script>
+</head>
+<body>
+    <form name="form1">
+<table>
+        <tr>
+            <td>Cinsiyetiniz:</td> 
+            <td>                      
+                <input type="radio" name="rdCinsiyet" value="E">Erkek                     
+                <input type="radio" name="rdCinsiyet" value="K">Kadın
+                <td id="sCinsiyet"></td>                    
+            </td>
+            
+        </tr>
+        <tr>
+            <td><input type="button" name="btnSubmit" value="Seçilen" onclick="javascript:Values1();"></td>
+        </tr>
+           <tr>
+            <td>Daire Türü Tercihiniz:</td>                    
+            <td>
+                <input type="checkbox" name="chkDaireTuru" value="1" id="1+1">1+1 
+                <input type="checkbox" name="chkDaireTuru" value="2" id="2+1">2+1
+                <input type="checkbox" name="chkDaireTuru" value="3" id="3+1">3+1
+                <input type="checkbox" name="chkDaireTuru" value="4" id="4+1">4+1
+                <td id="sDaire"></td>             
+            </td>
+            
+        </tr>
+        <tr>
+            <td><input type="button" name="btnSubmit" value="Seçilen" onclick="javascript:Values2();"></td>
+        </tr>
+        <tr>
+            <td>Mesleğiniz:</td>       
+            <td><select id="myM" name="drpMeslek" style="width:100%">
+                        <option value="0">Seçiniz</option>
+                        <option value="1">Avukat</option>
+                        <option value="2">Doktor</option>
+                        <option value="3">Mühendis</option>
+                        <option value="4">Polis</option>
+                </select>               
+            </td>
+            <td id="sMeslek"></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="btnSubmit" value="Seçilen" onclick="javascript:Values3();"></td>
+        </tr>
+        <tr><td></td></tr>
+        <tr>
+            <td><input type="button" name="btnSubmit" value="Kaydet" onclick="javascript:Values1();Values2();Values3();"></td>
+        </tr>
+</table>                     
+    </form>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="JavaScript">
+        function Values1()
+        {
+            var isim = document.form1.txtName.value;
+            var iharf = isim[1] + " "+ isim[2];
+            var soyisim = document.form1.txtSurName.value;
+            var soyisimson = soyisim.length-1;
+            var sharf = soyisim[soyisimson]
+            //alert(isim);
+            if(isim == "")
+            {
+                document.getElementById("yazı1").innerHTML = "İsim girilmedi";
+            }
+            else if(soyisim == "")
+            {
+                document.getElementById("yazı2").innerHTML = "Soyisim girilmedi";
+            }
+            else
+            {
+                //document.getElementById("yazı").innerHTML = isim.substring(1,3) + soyisim.lastordefault();
+                document.getElementById("yazı1").innerHTML = iharf;
+                document.getElementById("yazı2").innerHTML = sharf;
+            }
+            
+        }
+    </script>
+</head>
+<body>
+<form name="form1">
+    <table>
+    <tr>
+        <td>Adınız:</td>
+        <td><input type="text" autocomplete="off" name="txtName" style="width: 200px; text-align: right;" maxlength="50"></td>   
+    </tr>
+    <tr>
+        <td>Soyadınız:</td> 
+        <td><input type="text" autocomplete="off" name="txtSurName"style="width: 200px; text-align: right" maxlength="50"></td>
+    </tr>
+    <tr id="yazı1"></tr>
+    <tr id="yazı2"></tr>
+    <tr>
+        <td><input type="button" name="btnSubmit" value="Kaydet" onclick="javascript:Values1();"></td>
+    </tr>
+    </table>
+</form>
+</body>
+</html>
