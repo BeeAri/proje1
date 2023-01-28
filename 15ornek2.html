@@ -19,7 +19,7 @@
             }
             else
             {
-                document.getElementById("sCinsiyet").innerHTML = "=> "+ "Seçilmedi";
+                document.getElementById("sCinsiyet").innerHTML = "=> Seçim yapılmadı";
             }
         }
 
@@ -41,7 +41,7 @@
             }
             else
             {
-               document.getElementById("sDaire").innerHTML = "You have not selected anything";
+               document.getElementById("sDaire").innerHTML = "=> Seçim yapılmadı";
             }
         }
 
@@ -50,14 +50,23 @@
         {
             var grupD = [];
             var myD = document.getElementsByTagName("option");
-            
-            for(var i=0;i<myD.length;i++)
-			{
+
+            if(myD[0].selected)
+            {
+                document.getElementById("sMeslek").innerHTML = "=> Lütfen seçiniz";
+            }
+            else
+            {
+                for(var i=1;i<myD.length;i++)
+			    { 
 				if(myD[i].selected)
 				{
 					document.getElementById("sMeslek").innerHTML = "=> "+ myD[i].value + "/ " + myD[i].innerHTML;	
 				}
-			}
+			    }
+
+            }
+            
         }
 
     </script>
